@@ -17,6 +17,7 @@ class App extends React.Component {
     store.subscribe( () => {
       this.updateFromStore();
     });
+    console.log('subscribed')
   }
 
   updateFromStore(){
@@ -27,6 +28,10 @@ class App extends React.Component {
     this.setState({
       selectedButton: reduxState.selectedButton
     });
+
+    console.log('update select button state from redux store')
+    console.log('new value', this.state.selectedButton)
+
   }
 
   render(){
