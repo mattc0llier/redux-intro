@@ -36,7 +36,7 @@ function CountrySelector({ countryListOpen, selectedCountry, dispatch}){
   });
 
   return (
-    <div className="country-input">
+    <form className="country-input">
       <input
         type="text"
         className="country-input__field"
@@ -51,7 +51,7 @@ function CountrySelector({ countryListOpen, selectedCountry, dispatch}){
           })}
         </ul>
       </div>
-    </div>
+    </form>
   );
 }
 
