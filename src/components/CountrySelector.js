@@ -36,7 +36,7 @@ function CountrySelector({ countryListOpen, selectedCountry, dispatch}){
   });
 
   return (
-    <form className="country-input">
+    <form className="country-input" onSubmit={...}>
       <input
         type="text"
         className="country-input__field"
@@ -44,6 +44,7 @@ function CountrySelector({ countryListOpen, selectedCountry, dispatch}){
         onFocus={handleFocus}
         onBlur={handleBlur}
       />
+      <button type="submit"></button>
       <div className={listClasses}>
         <ul>
           {countries.map( country => {
