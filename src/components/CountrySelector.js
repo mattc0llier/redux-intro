@@ -17,6 +17,14 @@ function CountrySelector({ countryListOpen, selectedCountry, dispatch}){
     });
   }
 
+  function addCountry(event) {
+    event.preventDefault();
+    dispatch({
+      type: 'ADD_COUNTRY',
+      selectedCountry: selectedCountry
+    });
+  }
+
   function handleFocus(event){
     dispatch({
       type: 'SET_COUNTRY_LIST_OPEN',
@@ -36,7 +44,7 @@ function CountrySelector({ countryListOpen, selectedCountry, dispatch}){
   });
 
   return (
-    <form className="country-input" onSubmit={...}>
+    <form className="country-input" onSubmit={addCountry}>
       <input
         type="text"
         className="country-input__field"

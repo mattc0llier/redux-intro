@@ -11,7 +11,8 @@ class App extends React.Component {
     this.state = {
       selectedButton: reduxState.selectButton.selectedButton,
       selectedCountry: reduxState.country.selectedCountry,
-      countryListOpen: reduxState.country.countryListOpen
+      countryListOpen: reduxState.country.countryListOpen,
+      countriesVisited: reduxState.countriesVisited.countries
     }
   }
 
@@ -30,7 +31,8 @@ class App extends React.Component {
     this.setState({
       selectedButton: reduxState.selectButton.selectedButton,
       selectedCountry: reduxState.country.selectedCountry,
-      countryListOpen: reduxState.country.countryListOpen
+      countryListOpen: reduxState.country.countryListOpen,
+      countriesVisited: reduxState.countriesVisited.countries
     });
   }
 
