@@ -1,6 +1,7 @@
 import React from 'react';
 import VotingButtons from './VotingButtons';
 import CountrySelector from './CountrySelector';
+import CountriesVisited from './CountriesVisited';
 
 class App extends React.Component {
   constructor(props){
@@ -48,6 +49,7 @@ class App extends React.Component {
           countryListOpen={this.state.countryListOpen}
           dispatch={this.props.store.dispatch}
         />
+        <CountriesVisited countriesVisited={this.state.countriesVisited}/>
       </div>
     )
   }
