@@ -1,11 +1,12 @@
 import React from 'react';
 import CountrySelector from '../components/CountrySelector';
+import PropTypes from 'Prop-Types'
 
 class CountrySelectorContainer extends React.Component {
-  constructor(props){
-    super(props);
+  constructor(props, context){
+    super(props, context);
 
-    const reduxState = this.props.store.getState();
+    const reduxState = this.context.store.getState();
 
     this.state = {
       selectedCountry: reduxState.country.selectedCountry,
@@ -18,14 +19,14 @@ class CountrySelectorContainer extends React.Component {
   }
 
   componentDidMount(){
-    const { store } = this.props;
+    const { store } = this.context;
     store.subscribe( () => {
       this.updateFromStore();
     });
   }
 
   updateFromStore(){
-    const { store } = this.props;
+    const { store } = this.context;
 
     const reduxState = store.getState();
 
@@ -73,5 +74,9 @@ class CountrySelectorContainer extends React.Component {
     );
   }
 }
+
+CountrySelectorContainer.contextTypes = {
+  store: PropTypes.object
+};
 
 export default CountrySelectorContainer;
